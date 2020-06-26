@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PeaksolMC</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+	<style>
+		:root {
+			--base-font-size: 20px;
+			--cover-button-border-radius: 16px;
+		}
+		.button {
+			transition-duration: 0.2s;
+			background-color: var(--theme-color);
+			border: none;
+			outline: none;
+			color: #fff;
+			padding: 8px 16px;
+			cursor:pointer;
+		}
+		.button:hover {
+			filter:brightness(0.85);
+		}
+	</style>
+</head>
+<body>
+	<div id="app">Loading...</div>
+	<script>
+		window.$docsify = {
+			coverpage: true,
+			onlyCover: true,
+			auto2top: true,
+			loadSidebar: true,
+			executeScript: true,
+			name: 'Peaksol Official',
+			nameLink: {'/en/': '#/en/', '/': '#/'},
+			notFoundPage: {'/': '_404.md', '/en/': '/en/_404.md'},
+			fallbackLanguages: ['en'],
+			coverpage: ['/', '/en/'],
+		}
+		function ToEnglish() {
+			let regex = new RegExp('.+/#(?!(/en))/(.*)');
+			let result = window.location.href.match(regex);
+			window.location.href=('#/en/'+result[2]);
+		}
+		function ToChinese() {
+			let regex = new RegExp('.+/#/en/(.*)');
+			let result = window.location.href.match(regex);
+			window.location.href=('#/'+result[1]);
+		}
+
+		function NewTab(url) {
+			window.open(url, "_blank");
+		}
+	</script>
+	<nav style="cursor:pointer">
+		<ul>
+			<li><a href="https://space.bilibili.com/6933622" target="_blank">Bilibili</a></li>
+			<li><a href="https://jq.qq.com/?_wv=1027&k=5NRFBFD" target="_blank">QQ</a></li>
+			<li><a href="https://discord.gg/gCs88pR" target="_blank">Discord</a></li>
+			<li><a href="https://github.com/TravinDreek" target="_blank">GitHub</a></li>
+			<li>
+				<a id="lang">🌏中/En</a>
+				<ul>
+					<li onClick="ToChinese()">中文</li>
+					<li onClick="ToEnglish()">English</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<script src="https://cdn.bootcss.com/docsify/4.9.4/docsify.min.js"></script>
+</body>
+</html>
