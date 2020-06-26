@@ -18,7 +18,7 @@
 			outline: none;
 			color: #fff;
 			padding: 8px 16px;
-			cursor:pointer;
+			cursor: pointer;
 		}
 		.button:hover {
 			filter:brightness(0.85);
@@ -29,16 +29,15 @@
 	<div id="app">Loading...</div>
 	<script>
 		window.$docsify = {
-			coverpage: true,
 			onlyCover: true,
 			auto2top: true,
-			loadSidebar: true,
+			loadSidebar: 'sidebar.md',
 			executeScript: true,
 			name: 'Peaksol Official',
 			nameLink: {'/en/': '#/en/', '/': '#/'},
-			notFoundPage: {'/': '_404.md', '/en/': '/en/_404.md'},
+			notFoundPage: {'/': '404.md', '/en/': '/en/404.md'},
+			coverpage: {'/' : 'cover.md','/en/' : 'cover.md'},
 			fallbackLanguages: ['en'],
-			coverpage: ['/', '/en/'],
 		}
 		function ToEnglish() {
 			let regex = new RegExp('.+/#(?!(/en))/(.*)');
